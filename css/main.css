@@ -1,0 +1,238 @@
+:root {
+  --Red: hsl(0, 100%, 68%);
+  --Very-Dark-Blue: hsl(230, 29%, 20%);
+  --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+  --Grayish-Blue: hsl(231, 7%, 65%);
+  --light-Grayish-Blue: hsl(207, 33%, 95%);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
+  background-color: white;
+  padding: 20px;
+  overflow-x: hidden;
+  height: 900px;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 50px;
+  height: calc(50vh + 20px);
+  width: calc(50vw - 10px);
+  background-color: var(--light-Grayish-Blue);
+  z-index: -1;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+nav {
+  position: absolute;
+  top: -100vh;
+  width: 90%;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+nav.open {
+  top: 40px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--Very-Dark-Blue);
+  font-weight: 700;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+nav ul li:nth-child(4) {
+  display: none;
+}
+nav ul li:last-child {
+  border-top: 2px solid #ddd;
+  padding-top: 15px;
+  color: var();
+}
+nav ul li span a {
+  color: var(--Grayish-Blue);
+}
+
+.close {
+  display: none;
+}
+.showcase {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.showcase .right {
+  margin-bottom: 100px;
+}
+.showcase .right img {
+  width: calc(125vw);
+}
+.showcase .left .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.showcase .left .info span {
+  background-color: var(--Very-Dark-Blue);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.showcase .left .info h2 {
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+.showcase .left h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: var(--Very-Dark-Blue);
+}
+.showcase .left p {
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: var(--Dark-Grayish-Blue);
+  width: 300px;
+}
+.showcase .left .button {
+  display: flex;
+  align-items: center;
+}
+.showcase .left .button button {
+  background-color: var(--Red);
+  border: none;
+  color: var(--light-Grayish-Blue);
+  text-transform: uppercase;
+  padding: 20px 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-right: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.showcase .left .button span {
+  color: var(--Grayish-Blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 50px 250px;
+  }
+  nav {
+    position: relative;
+    top: 0;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    border-radius: 0;
+    box-shadow: none;
+    transition: 0;
+  }
+  nav.open {
+    top: 0;
+  }
+  nav ul {
+    flex-direction: row;
+  }
+  nav ul li a {
+    padding: 20px;
+    font-size: 18px;
+  }
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  nav ul li:nth-child(4) {
+    display: block;
+    color: var(--Grayish-Blue);
+    font-size: 50px;
+    line-height: 0.2;
+  }
+  nav ul li:last-child {
+    border: none;
+    padding: 0;
+  }
+  .menu-button {
+    display: none;
+  }
+  .showcase {
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .showcase .right {
+    position: absolute;
+    right: -200px;
+    top: 175px;
+  }
+  .showcase .right img {
+    width: auto;
+  }
+  .showcase .left h1 {
+    font-size: 70px;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+  .showcase .left p {
+    margin-bottom: 65px;
+  }
+  .showcase .left .button button {
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .showcase .left .button button:hover {
+    opacity: 0.7;
+  }
+  .showcase .left .button span {
+    letter-spacing: 2px;
+    font-size: 17px;
+  }
+}
